@@ -1,0 +1,21 @@
+{
+  "extends": "@rocketseat/eslint-config/react",
+  "plugins": ["eslint-plugin-import-helpers"],
+  "rules": {
+    "camelcase": "off",
+    "@typescript-eslint/no-empty-interface": "off",
+    "import-helpers/order-imports": [
+      "warn",
+      {
+        "newlinesBetween": "always", // new line between groups
+        "groups": [
+            "module",
+            "/^@screens/",
+            "/^@components/",
+            ["parent", "sibling", "index", "type"]
+        ],
+        "alphabetize": { "order": "asc", "ignoreCase": true }
+      }
+    ]
+  }
+}
