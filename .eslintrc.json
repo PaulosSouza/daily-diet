@@ -1,20 +1,43 @@
 {
   "extends": "@rocketseat/eslint-config/react",
-  "plugins": ["eslint-plugin-import-helpers"],
+  "plugins": [
+    "eslint-plugin-import-helpers"
+  ],
   "rules": {
     "camelcase": "off",
     "@typescript-eslint/no-empty-interface": "off",
+    "no-useless-catch": "off",
     "import-helpers/order-imports": [
       "warn",
       {
-        "newlinesBetween": "always", // new line between groups
+        "newlinesBetween": "always",
         "groups": [
-            "module",
-            "/^@screens/",
-            "/^@components/",
-            ["parent", "sibling", "index", "type"]
+          [
+            "/^react/",
+            "/^@expo/",
+            "/^expo/"
+          ],
+          "module",
+          "/^@models/",
+          "/^@navigations/",
+          "/^@screens/",
+          "/^@components/",
+          [
+            "/^@storage/",
+            "/^@config/"
+          ],
+          "/^@themes/",
+          [
+            "parent",
+            "sibling",
+            "index",
+            "type"
+          ]
         ],
-        "alphabetize": { "order": "asc", "ignoreCase": true }
+        "alphabetize": {
+          "order": "asc",
+          "ignoreCase": true
+        }
       }
     ]
   }
